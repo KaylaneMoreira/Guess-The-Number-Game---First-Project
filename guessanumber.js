@@ -22,7 +22,7 @@ function wrong(changecolor) {
 
 function right(changecolor) {
     changecolor.style.backgroundColor = "green";
-    changecolor.style.backgroundColor = "white";
+    changecolor.style.color = "white";
 }
 
 function refresh() {

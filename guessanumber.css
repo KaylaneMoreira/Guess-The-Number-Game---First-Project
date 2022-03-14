@@ -1,0 +1,25 @@
+body{
+    font-family: 'Fredoka', sans-serif;
+    color: rgb(241, 240, 240);
+}
+
+h1{
+    display: inline-flex;
+    gap: 10px;
+}
+p{
+    font-weight: 600;
+}
+
+main{
+    width: 800px;
+    height: 200px;
+    background-color: #115179;
+    border-radius: 30px;
+    text-align: center;
+    padding: 100px 50px;
+}
+.guessicon{
+    width: 5%;
+    height: auto;
+}
