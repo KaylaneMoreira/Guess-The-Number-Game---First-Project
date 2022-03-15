@@ -15,14 +15,16 @@ let guesses = [];
 const changecolor = document.querySelectorAll('p.lastResult')[0];
 const gameover = document.querySelectorAll('p.lastResult')[0];
 
-function wrong(changecolor) {
-    changecolor.style.backgroundColor = "red";
+const wrong = (changecolor) => {
+    changecolor.style.backgroundColor = "rgb(155, 39, 45)";
     changecolor.style.color = "white";
+    changecolor.style.borderRadius = "30px"
 }
 
-function right(changecolor) {
-    changecolor.style.backgroundColor = "green";
+const right = (changecolor) => {
+    changecolor.style.backgroundColor = "rgb(12, 141, 92)";
     changecolor.style.color = "white";
+    changecolor.style.borderRadius = "30px"
 }
 
 function refresh() {
@@ -50,13 +52,9 @@ function ifresults() {
         submit.disabled = true;
         field.disabled = true;
 
-        gameover.innerHTML = 'Gamover';
+        gameover.innerHTML = 'Game Over';
 
-        const newgame = document.createElement('button')
-        document.body.appendChild(newgame);
-        newgame.textContent = 'Start new game';
-
-        const newgamebtn = document.querySelectorAll('button')[0];
+        const newgamebtn = document.getElementsByClassName('.newgame');
         newgamebtn.addEventListener('click', refresh)
     }
     else if (lowResult) {
@@ -79,10 +77,6 @@ function ifresults() {
 
         submit.disabled = true;
         field.disabled = true;
-
-        const newgame = document.createElement('button')
-        document.body.appendChild(newgame);
-        newgame.textContent = 'Start new game'
 
         const newgamebtn = document.querySelectorAll('button')[0];
         newgamebtn.addEventListener('click', refresh)

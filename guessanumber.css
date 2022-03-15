@@ -1,8 +1,7 @@
-body{
-    font-family: 'Fredoka', sans-serif;
-    color: rgb(241, 240, 240);
-}
-
+    *{
+        font-family: 'Fredoka', sans-serif;
+        color: white;
+    }
 h1{
     display: inline-flex;
     gap: 10px;
@@ -10,16 +9,73 @@ h1{
 p{
     font-weight: 600;
 }
-
+body{
+    background-color: rgb(219, 212, 212);
+}
 main{
     width: 800px;
-    height: 200px;
+    height: 250px;
     background-color: #115179;
     border-radius: 30px;
     text-align: center;
     padding: 100px 50px;
+    margin-left: 30%;
 }
 .guessicon{
     width: 5%;
     height: auto;
+}
+.form{
+    display: flex;
+    text-align: center;
+    gap: 5px;
+    margin: 5px;
+    align-items: center;
+    padding-left: 200px;
+}
+.guessField{
+    color: black;
+    border-radius: 30px;
+    border-style: none;
+    height: 20px;
+    text-align: center;
+}
+.newgame, .guessSubmit{
+    border-radius: 30px;
+    border-style: none;
+    background-color: #2478ac;
+    color: white;
+    width: 150px;
+    height: 30px;
+}
+.newgame{
+    margin-right: 20px;
+}
+
+@media (max-width:700px){
+    body{
+        margin: 10%;
+    }
+    
+    main {
+        width: 60vw;
+        gap: 10px;
+        height: auto;
+        text-align: center;
+        margin-left: 2px;
+    }
+    .guessicon{
+        width: 20%;
+        height: auto;
+    }
+    p{
+        line-height: 30px;
+    }
+    .form{
+        padding-left:2px
+    }
+    .newgame{
+        margin-right: 1px;
+    }
+
 }
