@@ -4,46 +4,10 @@ function randomnumber() {
 
 const randomnumbervar = randomnumber()
 console.log('Gerando número aleatório ' + randomnumbervar);
-
 let turn = 1;
 const submit = document.body.getElementsByClassName('guessSubmit')[0]
 
-submit.addEventListener('click', nextTurn)
-
-let field = document.querySelectorAll('input.guessField')[0];
-let guesses = [];
-const changecolor = document.querySelectorAll('p.lastResult')[0];
-const gameover = document.querySelectorAll('p.lastResult')[0];
-
-const wrong = (changecolor) => {
-    changecolor.style.backgroundColor = "rgb(155, 39, 45)";
-    changecolor.style.color = "white";
-    changecolor.style.borderRadius = "30px"
-}
-
-const right = (changecolor) => {
-    changecolor.style.backgroundColor = "rgb(12, 141, 92)";
-    changecolor.style.color = "white";
-    changecolor.style.borderRadius = "30px"
-}
-
-function refresh() {
-    document.location.reload(true);
-}
-
-function nextTurn() {
-    ++turn
-    guesses.push(field.value);
-    guesses = guesses.map(Number)
-    field.value = '';
-    const prevGuesses = document.querySelectorAll('p.guesses')[0];
-    prevGuesses.innerHTML = `Previous: ${guesses}`;
-    ifresults();
-}
-
-
-function ifresults() {
-
+const ifresults = () => {
     let lastUserGuess = guesses[guesses.length - 1];
     let lowResult = lastUserGuess < randomnumbervar;
     let highResult = lastUserGuess > randomnumbervar;
@@ -54,7 +18,7 @@ function ifresults() {
 
         gameover.innerHTML = 'Game Over';
 
-        const newgamebtn = document.getElementsByClassName('.newgame');
+        const newgamebtn = document.querySelector('button')
         newgamebtn.addEventListener('click', refresh)
     }
     else if (lowResult) {
@@ -78,11 +42,46 @@ function ifresults() {
         submit.disabled = true;
         field.disabled = true;
 
-        const newgamebtn = document.querySelectorAll('button')[0];
+        const newgamebtn = document.querySelector('button');
         newgamebtn.addEventListener('click', refresh)
     }
     else { }
 }
+
+const nextTurn = () => {
+    ++turn
+    guesses.push(field.value);
+    guesses = guesses.map(Number)
+    field.value = '';
+    const prevGuesses = document.querySelector('p.guesses');
+    prevGuesses.innerHTML = `Previous: ${guesses}`;
+    ifresults();
+}
+
+submit.addEventListener('click', nextTurn)
+
+let field = document.querySelector('input.guessField');
+let guesses = [];
+const changecolor = document.querySelector('p.lastResult');
+const gameover = document.querySelector('p.lastResult');
+
+const wrong = (changecolor) => {
+    changecolor.style.backgroundColor = "rgb(155, 39, 45)";
+    changecolor.style.color = "white";
+    changecolor.style.borderRadius = "30px"
+}
+
+const right = (changecolor) => {
+    changecolor.style.backgroundColor = "rgb(12, 141, 92)";
+    changecolor.style.color = "white";
+    changecolor.style.borderRadius = "30px"
+}
+
+const refresh = () => {
+    document.location.reload(true);
+}
+
+
 
 
 

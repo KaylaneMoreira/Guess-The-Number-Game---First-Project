@@ -16,7 +16,7 @@ main{
     width: 800px;
     height: 250px;
     background-color: #115179;
-    border-radius: 30px;
+    border-radius: 30px ;
     text-align: center;
     padding: 100px 50px;
     margin-left: 30%;
@@ -52,20 +52,17 @@ main{
     margin-right: 20px;
 }
 
-@media (max-width:700px){
-    body{
-        margin: 12px 10%;
-    }
+@media (max-width:1200px){
     
     main {
-        width: 60vw;
-        gap: 10px;
+        width: 50vw;
+        gap: 5px;
         height: auto;
         text-align: center;
         margin-left: 2px;
     }
     .guessicon{
-        width: 20%;
+        width: 10%;
         height: auto;
     }
     p{
@@ -78,4 +75,27 @@ main{
         margin-right: 1px;
     }
 
+}
+@media (max-width:600px){
+    .guessicon{
+        width: 20%;
+        height: auto;
+    }
+    body {
+        margin-right: 20%;
+    }
+    main{
+        width: 60vw;
+        height: auto;
+        padding-bottom: 20px;
+    }
+}
+@media (max-width:1360px){
+    main {
+        width: 60vw;
+        gap: 5px;
+        height: auto;
+        text-align: center;
+        margin-left: 10%;
+    }
 }
