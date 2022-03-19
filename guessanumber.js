@@ -45,7 +45,6 @@ const ifresults = () => {
         const newgamebtn = document.querySelector('button');
         newgamebtn.addEventListener('click', refresh)
     }
-    else { }
 }
 
 const nextTurn = () => {
